@@ -216,7 +216,6 @@ const SKILLS = [
   {
     cat: "Database & Tools",
     items: [
-      { n: "MongoDB", p: 80 },
       { n: "Git", p: 90 },
     ],
   },
