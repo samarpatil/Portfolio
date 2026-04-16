@@ -270,6 +270,18 @@ function Skills() {
 const PROJECTS = [
   {
     id: 1,
+    title: "My Portfolio",
+    tag: "Front-End",
+    year: "2026",
+    desc: "My own Portfolio that shows about my projects,skills and many more things", 
+    tech: ["React", "JavaScript","Tailwindcss"],
+    accent: "#C7522A",
+    githubUrl: "https://github.com/samarpatil/Portfolio",
+    liveUrl: "https://samarportfolio-omega.vercel.app/",
+  },
+
+  {
+    id: 2,
     title: "Weather App",
     tag: "Front-End",
     year: "2026",
@@ -280,7 +292,7 @@ const PROJECTS = [
     liveUrl: "https://weather-app-ten-tan-92.vercel.app/",
   },
   {
-    id: 2,
+    id: 3,
     title: "To Do Manager",
     tag: "Front-End",
     year: "2026",
@@ -338,180 +350,6 @@ function Projects() {
   );
 }
 
-// ── LeetCode Graph ────────────────────────────────────────────────────────────
-function LeetCodeGraph({ data }) {
-  const total = data.totalSolved || 1;
-  const easy = (data.easySolved / total) * 100;
-  const medium = (data.mediumSolved / total) * 100;
-
-  return (
-    <div className="profile-card">
-      <h3>LeetCode</h3>
-      <div className="circle-chart">
-        <div
-          className="circle"
-          style={{
-            background: `conic-gradient(
-              #22c55e 0% ${easy}%,
-              #facc15 ${easy}% ${easy + medium}%,
-              #ef4444 ${easy + medium}% 100%
-            )`,
-          }}
-        >
-          <div className="circle-inner">
-            {data.totalSolved}
-            <span>solved</span>
-          </div>
-        </div>
-      </div>
-      <div className="legend">
-        <span>🟢 Easy: {data.easySolved}</span>
-        <span>🟡 Medium: {data.mediumSolved}</span>
-        <span>🔴 Hard: {data.hardSolved}</span>
-      </div>
-    </div>
-  );
-}
-
-// ── GitHub Activity Graph ─────────────────────────────────────────────────────
-function GitHubActivityGraph({ username = "samarpatil" }) {
-  const [contributions, setContributions] = useState([]);
-  const [totalContribs, setTotalContribs] = useState(0);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-  fetch(`https://github-contributions-api.jogruber.de/v4/${username}`)
-    .then((res) => res.json())
-    .then((data) => {
-      const weeks = data.contributions;
-
-      let formatted = [];
-      let total = 0;
-
-      weeks.forEach((week) => {
-        const weekData = week.days.map((d) => {
-          total += d.count;
-          return d.count;
-        });
-        formatted.push(weekData);
-      });
-
-      setContributions(formatted);
-      setTotalContribs(total);
-      setLoading(false);
-    })
-    .catch((err) => {
-      console.error("GitHub API error:", err);
-      setLoading(false);
-    });
-}, [username]);
-
-  const getColor = (count) => {
-    if (count === 0) return "var(--gh-empty)";
-    if (count <= 3) return "var(--gh-low)";
-    if (count <= 6) return "var(--gh-mid)";
-    if (count <= 10) return "var(--gh-high)";
-    return "var(--gh-max)";
-  };
-
-  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  const days = ["", "Mon", "", "Wed", "", "Fri", ""];
-
-  return (
-    <div className="profile-card gh-activity-card">
-      <div className="gh-card-header">
-        <h3>GitHub Activity</h3>
-        <a
-          href={`https://github.com/${username}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="gh-profile-link"
-        >
-          @{username}
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="12" height="12">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
-          </svg>
-        </a>
-      </div>
-      <p className="gh-total">{loading ? "Loading..." : `${totalContribs} contributions in the last year`}</p>
-
-      {!loading && (
-        <div className="gh-graph-wrap">
-          {/* Day labels */}
-          <div className="gh-day-labels">
-            {days.map((d, i) => (
-              <span key={i}>{d}</span>
-            ))}
-          </div>
-
-          {/* Grid */}
-          <div className="gh-grid">
-            {/* Month labels row */}
-            <div className="gh-month-row">
-              {months.map((m, i) => (
-                <span key={i} style={{ gridColumn: `${Math.round((i / 12) * 52) + 1}` }}>{m}</span>
-              ))}
-            </div>
-
-            {/* Contribution squares */}
-            <div className="gh-squares">
-              {contributions.map((week, wi) =>
-                week.map((count, di) => (
-                  <div
-                    key={`${wi}-${di}`}
-                    className="gh-square"
-                    style={{ background: getColor(count) }}
-                    title={`${count} contribution${count !== 1 ? "s" : ""}`}
-                  />
-                ))
-              )}
-            </div>
-          </div>
-        </div>
-      )}
-
-      <div className="gh-legend">
-        <span>Less</span>
-        {["var(--gh-empty)", "var(--gh-low)", "var(--gh-mid)", "var(--gh-high)", "var(--gh-max)"].map((c, i) => (
-          <div key={i} className="gh-square" style={{ background: c }} />
-        ))}
-        <span>More</span>
-      </div>
-    </div>
-  );
-}
-
-// ── Profiles Section ──────────────────────────────────────────────────────────
-function Profiles() {
-  const [leetcode, setLeetcode] = useState(null);
-
-  useEffect(() => {
-    fetch("https://leetcode-stats-api.herokuapp.com/kalki_28")
-      .then((res) => res.json())
-      .then((data) => setLeetcode(data))
-      .catch(() => console.log("LeetCode API error"));
-  }, []);
-
-  return (
-    <section className="profiles section" id="profiles">
-      <div className="container">
-        <div className="section-label">04 — Profiles</div>
-        <h2 className="section-heading">
-          Coding <span className="text-accent">Profiles</span>
-        </h2>
-        <div className="profiles-grid">
-          {leetcode ? <LeetCodeGraph data={leetcode} /> : (
-            <div className="profile-card profile-loading">
-              <div className="loading-pulse" />
-              <p>Loading LeetCode...</p>
-            </div>
-          )}
-          <GitHubActivityGraph username="samarpatil" />
-        </div>
-      </div>
-    </section>
-  );
-}
 
 // ── Now Section ───────────────────────────────────────────────────────────────
 function Now() {
@@ -710,7 +548,6 @@ export default function App() {
         <About />
         <Skills />
         <Projects />
-        <Profiles />
         <Now />
         <Contact />
       </main>
