@@ -27,7 +27,7 @@ function Nav({ dark, setDark }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const links = ["About", "Skills", "Projects", "Profiles", "Now", "Contact"];
+  const links = ["About", "Skills", "Projects", "Now", "Contact"];
 
   return (
     <nav className={`nav ${scrolled ? "nav--scrolled" : ""}`}>
