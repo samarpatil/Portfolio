@@ -49,13 +49,23 @@ function Nav({ dark, setDark }) {
       >
         {dark ? (
           // Sun icon
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
             <circle cx="12" cy="12" r="5" />
             <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
           </svg>
         ) : (
           // Moon icon
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
           </svg>
         )}
@@ -76,7 +86,10 @@ function Hero() {
     let timer;
     if (typing) {
       if (displayed.length < target.length) {
-        timer = setTimeout(() => setDisplayed(target.slice(0, displayed.length + 1)), 70);
+        timer = setTimeout(
+          () => setDisplayed(target.slice(0, displayed.length + 1)),
+          70,
+        );
       } else {
         timer = setTimeout(() => setTyping(false), 2200);
       }
@@ -97,7 +110,9 @@ function Hero() {
         <div className="flex flex-wrap">
           <h1 className="hero-name reveal-delay-1 py-5">
             <span style={{ display: "block" }}>Samar</span>
-            <span style={{ display: "block" }} className="thin">Patil</span>
+            <span style={{ display: "block" }} className="thin">
+              Patil
+            </span>
           </h1>
         </div>
         <div className="hero-role reveal-delay-2">
@@ -105,18 +120,29 @@ function Hero() {
           <span className="hero-cursor">|</span>
         </div>
         <p className="hero-desc reveal-delay-3">
-          Crafting clean, purposeful web experiences. I build full-stack applications that balance performance with elegant design.
+          Crafting clean, purposeful web experiences. I build full-stack
+          applications that balance performance with elegant design.
         </p>
         <div className="hero-actions reveal-delay-4">
           <a href="#projects" className="btn btn-primary">
             <span>View Projects</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </a>
-          <a href="/Resume_Final.pdf" className="btn btn-ghost">
+          <a href="./public/Samar Patil.pdf" className="btn btn-ghost">
             <span>Resume</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
               <polyline points="14 2 14 8 20 8" />
             </svg>
@@ -155,13 +181,26 @@ function About() {
             </div>
             <div className="terminal-card">
               <div className="terminal-bar">
-                <span /><span /><span />
+                <span />
+                <span />
+                <span />
               </div>
               <code>
-                <div><span className="c-gray">const</span> <span className="c-green">samar</span> = {"{"}</div>
-                <div>&nbsp;&nbsp;role: <span className="c-yellow">"Full Stack Dev"</span>,</div>
-                <div>&nbsp;&nbsp;passion: <span className="c-yellow">"Building things"</span>,</div>
-                <div>&nbsp;&nbsp;coffee: <span className="c-cyan">Infinity</span></div>
+                <div>
+                  <span className="c-gray">const</span>{" "}
+                  <span className="c-green">samar</span> = {"{"}
+                </div>
+                <div>
+                  &nbsp;&nbsp;role:{" "}
+                  <span className="c-yellow">"Full Stack Dev"</span>,
+                </div>
+                <div>
+                  &nbsp;&nbsp;passion:{" "}
+                  <span className="c-yellow">"Building things"</span>,
+                </div>
+                <div>
+                  &nbsp;&nbsp;coffee: <span className="c-cyan">Infinity</span>
+                </div>
                 <div>{"}"}</div>
               </code>
             </div>
@@ -171,16 +210,34 @@ function About() {
               Turning ideas into <span className="text-accent">reality</span>
             </h2>
             <p>
-              I am a Computer Science undergraduate at MANIT Bhopal with a strong interest in building real-world solutions through technology. Originally from Burhanpur, my journey has been driven by curiosity and a continuous desire to learn and improve.
+              I am a Computer Science undergraduate at MANIT Bhopal with a
+              strong interest in building real-world solutions through
+              technology. Originally from Burhanpur, my journey has been driven
+              by curiosity and a continuous desire to learn and improve.
             </p>
             <p>
-              I actively develop projects to enhance my technical skills and gain hands-on experience. I enjoy solving problems, exploring new technologies, and creating applications that have practical impact.
+              I actively develop projects to enhance my technical skills and
+              gain hands-on experience. I enjoy solving problems, exploring new
+              technologies, and creating applications that have practical
+              impact.
             </p>
             <div className="about-pillars">
               {[
-                { icon: "⚡", title: "Performance First", desc: "Every millisecond matters. I optimize for speed at every layer." },
-                { icon: "✦", title: "Design Sensibility", desc: "Beautiful UI isn't a luxury — it's a competitive advantage." },
-                { icon: "◈", title: "Clean Architecture", desc: "Code that's readable, maintainable, and built to scale." },
+                {
+                  icon: "⚡",
+                  title: "Performance First",
+                  desc: "Every millisecond matters. I optimize for speed at every layer.",
+                },
+                {
+                  icon: "✦",
+                  title: "Design Sensibility",
+                  desc: "Beautiful UI isn't a luxury — it's a competitive advantage.",
+                },
+                {
+                  icon: "◈",
+                  title: "Clean Architecture",
+                  desc: "Code that's readable, maintainable, and built to scale.",
+                },
               ].map((p) => (
                 <div key={p.title} className="about-pillar">
                   <span className="pillar-icon">{p.icon}</span>
@@ -215,9 +272,7 @@ const SKILLS = [
   },
   {
     cat: "Database & Tools",
-    items: [
-      { n: "Git", p: 90 },
-    ],
+    items: [{ n: "Git", p: 90 }],
   },
 ];
 
@@ -225,7 +280,12 @@ function SkillBar({ name, percent }) {
   const [w, setW] = useState(0);
   const ref = useRef(null);
   useEffect(() => {
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setW(percent); }, { threshold: 0.3 });
+    const obs = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) setW(percent);
+      },
+      { threshold: 0.3 },
+    );
     if (ref.current) obs.observe(ref.current);
     return () => obs.disconnect();
   }, [percent]);
@@ -272,8 +332,8 @@ const PROJECTS = [
     title: "My Portfolio",
     tag: "Front-End",
     year: "2026",
-    desc: "My own Portfolio that shows about my projects,skills and many more things", 
-    tech: ["React", "JavaScript","Tailwindcss"],
+    desc: "My own Portfolio that shows about my projects,skills and many more things",
+    tech: ["React", "JavaScript", "Tailwindcss"],
     accent: "#C7522A",
     githubUrl: "https://github.com/samarpatil/Portfolio",
     liveUrl: "https://samarportfolio-omega.vercel.app/",
@@ -299,7 +359,7 @@ const PROJECTS = [
     tech: ["React", "JavaScript"],
     accent: "#C7522A",
     githubUrl: "https://github.com/samarpatil/To-Do-App",
-    liveUrl: "https://to-do-app-weld-sigma-51.vercel.app/",
+    liveUrl: "https://to-do-app-sage-chi.vercel.app/",
   },
 ];
 
@@ -313,7 +373,11 @@ function Projects() {
         </h2>
         <div className="projects-grid">
           {PROJECTS.map((p) => (
-            <div key={p.id} className="project-card" style={{ "--card-accent": p.accent }}>
+            <div
+              key={p.id}
+              className="project-card"
+              style={{ "--card-accent": p.accent }}
+            >
               <div className="project-card-top" />
               <div className="project-card-content">
                 <div className="project-meta">
@@ -324,13 +388,20 @@ function Projects() {
                 <p className="project-desc">{p.desc}</p>
                 <div className="project-tech">
                   {p.tech.map((t) => (
-                    <span key={t} className="tech-pill">{t}</span>
+                    <span key={t} className="tech-pill">
+                      {t}
+                    </span>
                   ))}
                 </div>
                 <div className="project-links">
                   <a href={p.liveUrl} className="project-link">
                     View Project
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
                       <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
                   </a>
@@ -348,7 +419,6 @@ function Projects() {
     </section>
   );
 }
-
 
 // ── Now Section ───────────────────────────────────────────────────────────────
 function Now() {
@@ -383,7 +453,8 @@ function Now() {
           What I'm <span className="text-accent">Building</span>
         </h2>
         <p className="now-intro">
-          A snapshot of what I'm currently working on, learning, and thinking about. Updated regularly.
+          A snapshot of what I'm currently working on, learning, and thinking
+          about. Updated regularly.
         </p>
         <div className="now-grid">
           {items.map((item) => (
@@ -423,7 +494,8 @@ function Contact() {
         <div className="contact-grid">
           <div className="contact-info">
             <p className="contact-intro">
-              Have a project in mind? Let's build something great together. I'm always open to exciting opportunities and new collaborations.
+              Have a project in mind? Let's build something great together. I'm
+              always open to exciting opportunities and new collaborations.
             </p>
             <div className="contact-items">
               {[
@@ -443,9 +515,18 @@ function Contact() {
             <div className="socials">
               {[
                 { name: "GitHub", url: "https://github.com/samarpatil" },
-                { name: "LinkedIn", url: "https://www.linkedin.com/in/samar-patil-31394a31a" },
+                {
+                  name: "LinkedIn",
+                  url: "https://www.linkedin.com/in/samar-patil-31394a31a",
+                },
               ].map((s) => (
-                <a key={s.name} href={s.url} className="social-pill" target="_blank" rel="noopener noreferrer">
+                <a
+                  key={s.name}
+                  href={s.url}
+                  className="social-pill"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {s.name}
                 </a>
               ))}
@@ -463,20 +544,45 @@ function Contact() {
                 <div className="form-row">
                   <div className="form-group">
                     <label>Name</label>
-                    <input name="name" value={form.name} onChange={handle} placeholder="Your name" required />
+                    <input
+                      name="name"
+                      value={form.name}
+                      onChange={handle}
+                      placeholder="Your name"
+                      required
+                    />
                   </div>
                   <div className="form-group">
                     <label>Email</label>
-                    <input name="email" type="email" value={form.email} onChange={handle} placeholder="your@email.com" required />
+                    <input
+                      name="email"
+                      type="email"
+                      value={form.email}
+                      onChange={handle}
+                      placeholder="your@email.com"
+                      required
+                    />
                   </div>
                 </div>
                 <div className="form-group">
                   <label>Message</label>
-                  <textarea name="message" value={form.message} onChange={handle} rows={5} placeholder="Tell me about your project..." required />
+                  <textarea
+                    name="message"
+                    value={form.message}
+                    onChange={handle}
+                    rows={5}
+                    placeholder="Tell me about your project..."
+                    required
+                  />
                 </div>
                 <button type="submit" className="btn btn-primary btn-full">
                   <span>Send Message</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
                     <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
                   </svg>
                 </button>
@@ -494,9 +600,15 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <div className="footer-logo">S P<span className="nav-logo-dot"></span></div>
-        <p className="footer-copy">© 2026 Samar Patil · Built with React + Vite.</p>
-        <a href="#hero" className="footer-back">Back to top ↑</a>
+        <div className="footer-logo">
+          S P<span className="nav-logo-dot"></span>
+        </div>
+        <p className="footer-copy">
+          © 2026 Samar Patil · Built with React + Vite.
+        </p>
+        <a href="#hero" className="footer-back">
+          Back to top ↑
+        </a>
       </div>
     </footer>
   );
@@ -509,23 +621,41 @@ export function NotFound() {
       <div className="not-found-content">
         <div className="not-found-code">
           <span className="not-found-404">404</span>
-          <div className="not-found-glitch" aria-hidden="true">404</div>
+          <div className="not-found-glitch" aria-hidden="true">
+            404
+          </div>
         </div>
         <div className="not-found-terminal">
           <div className="terminal-bar">
-            <span /><span /><span />
+            <span />
+            <span />
+            <span />
           </div>
           <code>
-            <div><span className="c-gray">$</span> <span className="c-green">find</span> <span className="c-yellow">/page</span></div>
+            <div>
+              <span className="c-gray">$</span>{" "}
+              <span className="c-green">find</span>{" "}
+              <span className="c-yellow">/page</span>
+            </div>
             <div className="c-gray">searching...</div>
-            <div><span style={{ color: "#ef4444" }}>error:</span> page not found</div>
+            <div>
+              <span style={{ color: "#ef4444" }}>error:</span> page not found
+            </div>
             <div className="c-gray">exit code: 404</div>
           </code>
         </div>
         <h2 className="not-found-msg">This page doesn't exist.</h2>
-        <p className="not-found-sub">You might have followed a broken link, or the page has been moved.</p>
+        <p className="not-found-sub">
+          You might have followed a broken link, or the page has been moved.
+        </p>
         <a href="/" className="btn btn-primary">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: 15, height: 15 }}>
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            style={{ width: 15, height: 15 }}
+          >
             <path d="M19 12H5M12 19l-7-7 7-7" />
           </svg>
           <span>Back to Home</span>
