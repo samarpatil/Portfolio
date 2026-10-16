@@ -329,6 +329,28 @@ function Skills() {
 const PROJECTS = [
   {
     id: 1,
+    title: "KrishiSetu",
+    tag: "Full Stack",
+    year: "2026",
+    desc: "KrishiSetu is a digital agricultural marketplace that connects farmers and Farmer Producer Organizations (FPOs) directly with consumers and bulk buyers. It helps reduce intermediaries, improve farmers' earnings, and make agricultural produce more accessible at fair prices. The platform offers product listings, supplier matching, order management, demand forecasting, and dashboards for farmers, buyers, and administrators. Built using React, Vite, Node.js, Express, and MongoDB, KrishiSetu aims to create a more transparent, efficient, and accessible agricultural supply chain.",
+    tech: [
+      "React",
+      "JavaScript",
+      "Tailwind CSS",
+      "Vite",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Mongoose",
+      "JWT Authentication",
+      "REST APIs",
+    ],
+    accent: "#C7522A",
+    githubUrl: "https://github.com/samarpatil/KrishiSetu",
+    liveUrl: "https://krishi-setu-3r1z51bly-samarpatils-projects.vercel.app/",
+  },
+  {
+    id: 2,
     title: "My Portfolio",
     tag: "Front-End",
     year: "2026",
@@ -340,17 +362,6 @@ const PROJECTS = [
   },
 
   {
-    id: 2,
-    title: "Weather App",
-    tag: "Front-End",
-    year: "2026",
-    desc: "Real-time weather app using API integration.",
-    tech: ["React", "JavaScript", "Tailwind CSS"],
-    accent: "#2D3A8C",
-    githubUrl: "https://github.com/samarpatil/Weather-App",
-    liveUrl: "https://weather-app-ten-tan-92.vercel.app/",
-  },
-  {
     id: 3,
     title: "To Do Manager",
     tag: "Front-End",
@@ -360,6 +371,17 @@ const PROJECTS = [
     accent: "#C7522A",
     githubUrl: "https://github.com/samarpatil/To-Do-App",
     liveUrl: "https://to-do-app-sage-chi.vercel.app/",
+  },
+  {
+    id: 4,
+    title: "Weather App",
+    tag: "Front-End",
+    year: "2026",
+    desc: "Real-time weather app using API integration.",
+    tech: ["React", "JavaScript", "Tailwind CSS"],
+    accent: "#2D3A8C",
+    githubUrl: "https://github.com/samarpatil/Weather-App",
+    liveUrl: "https://weather-app-ten-tan-92.vercel.app/",
   },
 ];
 
